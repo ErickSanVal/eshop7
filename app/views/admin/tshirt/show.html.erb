@@ -9,13 +9,6 @@
   <dd><%= @tshirt.price %></dd>
   <dt>Manufacturer</dt>
   <dd><%= @tshirt.manufacturer.name %></dd>
-    <dt>Image</dt>
-  <% if @tshirt.image.exists? then %>
-    <dd><%= image_tag @tshirt.image.url(:medium) %></dd>
-  <% else %>
-    <dd><%= image_tag '/missing.png' %></dd>
-    <p> There is no image attached. Please upload one. </p>
-  <% end %>
 
   
 </dl>
