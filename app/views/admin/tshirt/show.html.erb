@@ -1,0 +1,24 @@
+<dl>
+  <dt>Club</dt>
+  <dd><%= @tshirt.club %></dd>
+  <dt>Country</dt>
+  <dd><%= @tshirt.country %></dd>
+  <dt>Size</dt>
+  <dd><%= @tshirt.size %></dd>
+  <dt>Price</dt>
+  <dd><%= @tshirt.price %></dd>
+  <dt>Manufacturer</dt>
+  <dd><%= @tshirt.manufacturer.name %></dd>
+    <dt>Image</dt>
+  <% if @tshirt.image.exists? then %>
+    <dd><%= image_tag @tshirt.image.url(:medium) %></dd>
+  <% else %>
+    <dd><%= image_tag '/missing.png' %></dd>
+    <p> There is no image attached. Please upload one. </p>
+  <% end %>
+
+  
+</dl>
+
+<%= link_to 'Edit', :action => 'edit', :id => @tshirt %> |
+<%= link_to 'Back', :action => 'index' %>

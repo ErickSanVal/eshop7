@@ -1,0 +1,20 @@
+<% if @manufacturer.errors.any? %>
+  <div id="errorExplanation">
+  <h2><%= pluralize(@manufacturer.errors.count, "error") %> prohibited this manufacturer from being saved:</h2>
+    <ul>
+      <% @manufacturer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <p><label for="manufacturer_name">Name</label><br/>
+  <%= text_field 'manufacturer', 'name' %></p>
+</div>
+
+<div class="field">
+  <p><label for="manufacturer_telephone">Telephone</label><br/>
+  <%= text_field 'manufacturer', 'telephone' %></p>
+</div>

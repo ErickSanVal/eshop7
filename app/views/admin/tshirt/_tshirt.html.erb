@@ -1,0 +1,13 @@
+<tr>
+    <td><%=h tshirt.size %></td>
+  <td><%=h tshirt.country %></td>
+    <td><%=h link_to tshirt.club, :action => 'show', :id => tshirt %></td>
+   <td><%=h tshirt.price %></td>
+  <td><%=h tshirt.manufacturer.name %></td>
+
+  <td><%= link_to 'Edit', :action => 'edit', :id => 1 %></td>
+  <td>
+    <%= button_to 'Delete', { :action => 'destroy', :id => tshirt },
+        data: { confirm: "Are you sure you want to delete this t-shirt #{tshirt.club}?" } %>   
+  </td>
+</tr>

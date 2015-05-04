@@ -1,0 +1,43 @@
+<% if @tshirt.errors.any? %>
+  <div id="errorExplanation">
+  <h2><%= pluralize(@tshirt.errors.count, "error") %> prohibited this t-shirt from being saved:</h2>
+    <ul>
+      <% @tshirt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p><label for="tshirt_manufacturer">Manufacturers</label><br/>
+<%= collection_select :tshirt, :manufacturer_id, @manufacturers, :id, :name %></p>
+
+<div class="field">
+  <p><label for="tshirt_size">Size</label><br/>
+  <%= text_field 'tshirt', 'size' %></p>
+</div>
+
+<div class="field">
+  <p><label for="tshirt_country">Country</label><br/>
+  <%= text_field 'tshirt', 'country' %></p>
+</div>
+
+<div class="field">
+  <p><label for="tshirt_club">Club</label><br/>
+  <%= text_field 'tshirt', 'club' %></p>
+</div>
+
+<div class="field">
+  <p><label for="tshirt_price">Price</label><br/>
+  <%= text_field 'tshirt', 'price' %></p>
+</div>
+
+<div class="field">
+  <% if @tshirt.image.exists? then %>
+    <dd><%= image_tag @tshirt.image.url(:medium) %></dd>
+  <% else %>
+    <p> There is no image attached. Please upload one. </p>
+  <% end %>
+  <p><label for="tshirt_image">Image</label><br/>
+  <%= file_field 'tshirt', :image %></p>
+</div>

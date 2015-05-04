@@ -1,0 +1,16 @@
+<table>
+  <tr>
+  	<th>Size</th>
+  	<th>Country</th>
+    <th>Club</th>
+    <th>Price</th>
+    <th>Manufacturer</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+  <%= render :partial => 'tshirt', :collection => @tshirts %>
+  
+</table>
+
+<p><%= link_to 'Add a new t-shirt', :action => 'new' %></p>

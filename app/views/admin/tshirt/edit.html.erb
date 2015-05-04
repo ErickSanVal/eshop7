@@ -1,0 +1,7 @@
+<%= form_tag "create", :multipart => true do %> 
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Update tshirt' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @tshirt %> |
+<%= link_to 'Back', :action => 'index' %>

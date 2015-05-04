@@ -1,0 +1,9 @@
+<dl id = 'tshirts'>
+  <% for tshirt in @tshirts %>
+    <dt>
+      <%= link_to tshirt.club, :action => 'show', :id => tshirt %>
+    </dt>
+      <dd>Manufacturer: <%= tshirt.manufacturer.name %></dd>
+    <dd>Club: <%= tshirt.club %></dd>
+  <% end %>
+</dl>
