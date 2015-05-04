@@ -34,3 +34,9 @@ five:
  club: "Mentira"
  country: "Imaginacion"
  manufacturer_id: 1
+six:
+ id: 6
+ size: "SL"
+ club: "Mentiras"
+ country: "Imaginacion"
+ manufacturer_id: 1
