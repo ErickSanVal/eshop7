@@ -2,6 +2,7 @@
   <% for tshirt in @tshirts %>
     <dt>
       <%= link_to tshirt.club, :action => 'show', :id => tshirt %>
+      <%= link_to '+', :controller => 'cart', :action => 'add', :id => tshirt %>
     </dt>
       <dd>Manufacturer: <%= tshirt.manufacturer.name %></dd>
     <dd>Club: <%= tshirt.club %></dd>

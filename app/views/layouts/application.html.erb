@@ -5,11 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
 <div id="header">
     <h1 id="logo">FUTBOLEROS&trade;</h1>
     <h2 id="slogan">Tu tienda de camisetas</h2>
+  </div>
+
+  <div id="menu">
+    <ul>
+      <li><a href="/admin/manufacturer/index">Manufacturers</a>&nbsp;|&nbsp;</li>
+      <li><a href="/admin/tshirt/index">T-Shirts</a>&nbsp;|&nbsp;</li>
+      <li><a href="/catalog/index">Catalog</a>&nbsp;|&nbsp;</li>
+      <li><a href="/about/index">About</a>&nbsp;</li>
+    </ul>
   </div>
 
   <div id="content">
@@ -19,6 +29,10 @@
     <% end %>
     <%= yield %>
   </div>
+
+  <% if @cart %>
+    <div id="shopping_cart"><%= render :partial => 'cart/cart' %></div>
+  <% end %>
 
   <div id="footer">
     &copy; 2015 GRUPO 7

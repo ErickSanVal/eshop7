@@ -65,7 +65,35 @@ dt {
   background-color: #FFCC80;
 }
 
-#header {
+#menu ul {
+  padding: 2px;
+  margin: 2px;
+  list-style: none;
+  border-top: 5px solid #B36B00;
+  border-bottom: 1px solid grey;
+}
+
+#menu ul li {
+  margin: 0px;
+  display: inline;
+}
+
+#menu a, #menu a:visited, #menu a:active {
+  font-weight: bold;
+  color: black;
+  font-size: 110%;
+  text-decoration:none;
+}
+
+#menu a:active {
+  background-color: grey;
+}
+
+#menu a:hover {
+  color: white;
+}
+
+#header{
 }
 
 #content {
@@ -89,4 +117,74 @@ dt {
   line-height: 0px;
   top: -10px;
   left: 80px;
+}
+
+#shopping_cart {
+  border-left: 3px solid #666;
+  background: #def;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  padding: 5px 10px;
+}
+
+#shopping_cart ul,
+#shopping_cart li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#shopping_cart h3 {
+  padding-top: 4em;
+}
+
+#cart_notice {
+  border: 2px solid #58A986;
+  background: #B2FFD3;
+  padding: 3px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+#loginlogout {
+  background-color: #4F0;
+  padding: 8px;
+  width: 150px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+#checkout fieldset {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #ccc;
+  padding: 1em 1em 1em 1.5em;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#checkout fieldset:hover {
+  border: 1px solid #3A789D;
+}
+
+#checkout legend {
+  font-weight: bold;
+}
+
+#checkout fieldset input {
+  margin: 1px;
+}
+
+#order_card_verification_value {
+  width: 50px;
+}
+
+#checkout fieldset input:focus {
+  background-color: #CCCCCC;
 }

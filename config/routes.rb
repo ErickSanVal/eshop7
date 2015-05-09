@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  
+  root :to => 'catalog#index'
+
+  get 'cart/add'
+  post 'cart/add'
+
+  get 'cart/remove'
+  post 'cart/remove'
+
+  get 'cart/clear'
+  post 'cart/clear'
+
   get 'catalog/index'
 
   get 'catalog/search'

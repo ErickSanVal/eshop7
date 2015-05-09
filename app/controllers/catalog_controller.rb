@@ -1,5 +1,6 @@
 class CatalogController < ApplicationController
-  
+    before_filter :initialize_cart
+
   def show
     @tshirt = Tshirt.find(params[:id])
     @page_title = @tshirt.club
