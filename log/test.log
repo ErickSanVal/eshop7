@@ -3937,3 +3937,441 @@ AboutControllerTest: test_should_get_index
 Processing by AboutController#index as HTML
 Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (47.9ms)[0m  CREATE TABLE `cart_items` (`id` int(11) auto_increment PRIMARY KEY, `tshirt_id` int(11), `cart_id` int(11), `price` float, `amount` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE `carts` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (1.4ms)[0m  DROP TABLE `manufacturers`
+  [1m[36m (39.5ms)[0m  [1mCREATE TABLE `manufacturers` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `telephone` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (1.8ms)[0m  DROP TABLE `tshirts`
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE `tshirts` (`id` int(11) auto_increment PRIMARY KEY, `price` float, `size` varchar(255), `country` varchar(255), `club` varchar(255), `manufacturer_id` int(11) NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (67.8ms)[0m  CREATE  INDEX `fk_man_manufacturer` USING btree ON `tshirts` (`manufacturer_id`) 
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150509152041')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150509152000')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `carts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-11 16:29:14', '2015-05-11 16:29:14', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-11 16:29:14', '2015-05-11 16:29:14', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-11 16:29:14', '2015-05-11 16:29:14', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-11 16:29:14', '2015-05-11 16:29:14', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-05-11 16:29:14', '2015-05-11 16:29:14')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+------------------------------------------
+AboutControllerTest: test_should_get_index
+------------------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 647ms (Views: 646.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:14', 'Fabricante', '123321123', '2015-05-11 16:29:14')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:14', 'Fabricante2', '123321113', '2015-05-11 16:29:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:14', 'Fabricante3', '1233211123', '2015-05-11 16:29:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:14', 'Fabricante4', '1233211123', '2015-05-11 16:29:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------
+Admin::TshirtControllerTest: test_create
+----------------------------------------
+Processing by Admin::TshirtController#new as HTML
+  [1m[35mManufacturer Load (0.5ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`
+  Rendered admin/tshirt/_form.html.erb (14.5ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+Processing by Admin::TshirtController#create as HTML
+  Parameters: {"tshirt"=>{"manufacturer_id"=>"1", "size"=>"L", "country"=>"Spain", "club"=>"Madrid", "price"=>"20"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `tshirts` (`club`, `country`, `manufacturer_id`, `price`, `size`) VALUES ('Madrid', 'Spain', 1, 20.0, 'L')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/tshirt/index
+Completed 302 Found in 11ms (Views: 22.6ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `tshirts`
+  [1m[36m (2.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+Admin::TshirtControllerTest: test_failing_create
+------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+Processing by Admin::TshirtController#create as HTML
+  Parameters: {"tshirt"=>{"size"=>"L"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`
+  Rendered admin/tshirt/_form.html.erb (5.8ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------
+Admin::TshirtControllerTest: test_new
+-------------------------------------
+Processing by Admin::TshirtController#new as HTML
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`
+  Rendered admin/tshirt/_form.html.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_create
+----------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+  Rendered admin/manufacturer/_form.html.erb (0.9ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `manufacturers`[0m
+Processing by Admin::ManufacturerController#create as HTML
+  Parameters: {"manufacturer"=>{"name"=>"Kevinva", "telephone"=>"123456789"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:15', 'Kevinva', '123456789', '2015-05-11 16:29:15')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin/manufacturer/index
+Completed 302 Found in 5ms (Views: 6.9ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `manufacturers`[0m
+  [1m[35m (2.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_edit
+--------------------------------------------
+Processing by Admin::ManufacturerController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  Rendered admin/manufacturer/_form.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+Admin::ManufacturerControllerTest: test_failing_create
+------------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `manufacturers`[0m
+Processing by Admin::ManufacturerController#create as HTML
+  Parameters: {"manufacturer"=>{"name"=>"Kevinva"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered admin/manufacturer/_form.html.erb (0.8ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------
+Admin::ManufacturerControllerTest: test_index
+---------------------------------------------
+Processing by Admin::ManufacturerController#index as HTML
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`[0m
+  Rendered admin/manufacturer/_manufacturer.html.erb (1.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`   ORDER BY `manufacturers`.`id` ASC LIMIT 1000[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+Admin::ManufacturerControllerTest: test_new
+-------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+  Rendered admin/manufacturer/_form.html.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_show
+--------------------------------------------
+Processing by Admin::ManufacturerController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+Admin::ManufacturerControllerTest: test_test_destroy
+----------------------------------------------------
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+Processing by Admin::ManufacturerController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mManufacturer Load (0.7ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `manufacturers` WHERE `manufacturers`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin/manufacturer/index
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+Processing by Admin::ManufacturerController#index as HTML
+  [1m[36mManufacturer Load (0.6ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`[0m
+  Rendered admin/manufacturer/_manufacturer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+  [1m[36m (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_update
+----------------------------------------------
+Processing by Admin::ManufacturerController#update as HTML
+  Parameters: {"id"=>"1", "manufacturer"=>{"name"=>"OtroNombre", "telephone"=>"123456789"}}
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `manufacturers` SET `name` = 'OtroNombre', `updated_at` = '2015-05-11 16:29:15' WHERE `manufacturers`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin/manufacturer/show?id=1
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (2.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------
+CatalogTest: test_browse
+------------------------
+Started GET "/catalog/index" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by CatalogController#index as HTML
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-11 16:29:15', '2015-05-11 16:29:15')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.4ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+  Rendered catalog/_tshirts.html.erb (8.0ms)
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190963
+  Rendered cart/_cart.html.erb (5.5ms)
+Completed 200 OK in 37ms (Views: 20.6ms | ActiveRecord: 2.0ms)
+Started GET "/catalog/index?page=2" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by CatalogController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190963 LIMIT 1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 5
+  [1m[36mManufacturer Load (0.1ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  Rendered catalog/_tshirts.html.erb (2.1ms)
+  [1m[35mCartItem Load (0.2ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190963
+  Rendered cart/_cart.html.erb (1.0ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.9ms)
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`club` = 'Madrid' LIMIT 1[0m
+Started GET "/catalog/latest" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by CatalogController#latest as HTML
+  [1m[35mCart Load (1.0ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190963 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  Rendered catalog/_tshirts.html.erb (3.9ms)
+  [1m[36mCartItem Load (0.2ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190963[0m
+  Rendered cart/_cart.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 1.6ms)
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.6ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------
+TshirtIntegrationTest: test_tshirt_administration
+-------------------------------------------------
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-11 16:29:15', 'Prueba', '123456789', '2015-05-11 16:29:15')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.4ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`   ORDER BY `manufacturers`.`id` ASC LIMIT 1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#new as HTML
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`[0m
+  Rendered admin/tshirt/_form.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+Started POST "/admin/tshirt/create" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#create as HTML
+  Parameters: {"tshirt"=>{"price"=>"30.5", "size"=>"M", "country"=>"Spain", "club"=>"Real Madrid", "manufacturer_id"=>"7"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `tshirts` (`club`, `country`, `manufacturer_id`, `price`, `size`) VALUES ('Real Madrid', 'Spain', 7, 30.5, 'M')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/tshirt/index
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+Started GET "/admin/tshirt/index" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#index as HTML
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT `tshirts`.* FROM `tshirts`
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1[0m
+  Rendered admin/tshirt/_tshirt.html.erb (9.0ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `tshirts`
+Started GET "/admin/tshirt/index/?page=2" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts`[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mManufacturer Load (0.4ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1
+  Rendered admin/tshirt/_tshirt.html.erb (13.9ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 1.1ms)
+  [1m[36mTshirt Load (0.4ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`club` = 'Real Madrid' LIMIT 1[0m
+Started GET "/admin/tshirt/index" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#index as HTML
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT `tshirts`.* FROM `tshirts`
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1[0m
+  Rendered admin/tshirt/_tshirt.html.erb (8.5ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 1.0ms)
+Started GET "/admin/tshirt/show?id=8" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTshirt Load (0.5ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 8 LIMIT 1
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.8ms)
+Started GET "/admin/tshirt/edit?id=8" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 8 LIMIT 1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`[0m
+  Rendered admin/tshirt/_form.html.erb (1.3ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+Started POST "/admin/tshirt/update?id=8" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#update as HTML
+  Parameters: {"tshirt"=>{"price"=>"10.5", "size"=>"L", "country"=>"Spain", "club"=>"Barcelona", "manufacturer_id"=>"7"}, "id"=>"8"}
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 8 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `tshirts` SET `club` = 'Barcelona', `price` = 10.5, `size` = 'L' WHERE `tshirts`.`id` = 8[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/tshirt/show?id=8
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/admin/tshirt/show?id=8" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 8 LIMIT 1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 7 LIMIT 1
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+Started POST "/admin/tshirt/destroy?id=8" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `tshirts` WHERE `tshirts`.`id` = 8[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/tshirt/index
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+Started GET "/admin/tshirt/index" for 127.0.0.1 at 2015-05-11 18:29:15 +0200
+Processing by Admin::TshirtController#index as HTML
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts`[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/tshirt/_tshirt.html.erb (6.9ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------
+CartControllerTest: test_should_get_add
+---------------------------------------
+Processing by CartController#add as HTML
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-11 16:29:15', '2015-05-11 16:29:15')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 404 Not Found in 2ms
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+CartControllerTest: test_should_get_clear
+-----------------------------------------
+Processing by CartController#clear as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-11 16:29:15', '2015-05-11 16:29:15')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCartItem Load (0.4ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965
+  Rendered cart/_cart.html.erb (1.2ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.9ms)
+  [1m[36m (2.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------
+CartControllerTest: test_should_get_remove
+------------------------------------------
+Processing by CartController#remove as HTML
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-11 16:29:15', '2015-05-11 16:29:15')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 404 Not Found in 3ms
+  [1m[35m (1.1ms)[0m  ROLLBACK
