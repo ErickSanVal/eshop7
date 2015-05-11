@@ -14,15 +14,15 @@ class CartController < ApplicationController
   end
 
   def remove
-  		@tshirt = Tshirt.find params[:id]
-  	@page_title = 'Add item'
-  	if request.post?
-  		@item = @cart.remove params[:id]
-  		flash[:cart_notice] = "Added <em>#{@item.tshirt.club}</em>."
-        redirect_to :controller => 'catalog'
-  	else
-  		render :controller => 'cart', :action => 'add', :template => 'cart/add'
-	end
+    @tshirt = Tshirt.find params[:id]
+    @page_title = 'Remove item'
+    if request.post?
+      @item = @cart.remove params[:id]
+      flash[:cart_notice] = "Removed 1 <em>#{@item.tshirt.club} T-shirt</em>."
+      redirect_to :controller => 'catalog'
+    else
+      render :controller => 'cart', :action => 'remove'
+    end
   end
 
   def clear
