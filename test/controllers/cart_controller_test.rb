@@ -17,7 +17,7 @@ class CartControllerTest < ActionController::TestCase
   	assert_equal [Tshirt.find(4)], Cart.find(@request.session[:cart_id]).tshirts
 
   	post :remove, :id => 4
-  	assert_equal [], Cart.find(@request.session[cart_id]).tshirts
+  	assert_equal [], Cart.find(@request.session[:cart_id]).tshirts
   end
 
   test "clear" do
