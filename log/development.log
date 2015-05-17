@@ -25679,3 +25679,356 @@ ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js
   Rendered /home/kevin/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
   Rendered /home/kevin/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.1ms)
 >>>>>>> 858b59bdf576aadb760c28ea069a41770b7e6a12
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 19:27:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CatalogController#index as HTML
+  [1m[35mCart Load (0.4ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.5ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (2, 1)
+  Rendered catalog/_tshirts.html.erb (87.3ms)
+  Rendered catalog/index.html.erb within layouts/application (111.0ms)
+  [1m[36mCartItem Load (0.3ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7[0m
+  Rendered cart/_cart.html.erb (60.7ms)
+Completed 200 OK in 1181ms (Views: 1085.7ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/assets/about.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:48 +0200
+
+
+Started GET "/assets/admin/manufacturer.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:48 +0200
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:48 +0200
+
+
+Started GET "/assets/catalog.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/cart.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/admin/tshirt.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/about.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/admin/manufacturer.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/admin/tshirt.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/cart.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/catalog.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2015-05-11 19:27:49 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.4ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.2ms)
+
+
+Started GET "/catalog/index" for 127.0.0.1 at 2015-05-11 19:27:52 +0200
+Processing by CatalogController#index as HTML
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (2, 1)
+  Rendered catalog/_tshirts.html.erb (7.3ms)
+  Rendered catalog/index.html.erb within layouts/application (24.1ms)
+  [1m[36mCartItem Load (0.5ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7[0m
+  Rendered cart/_cart.html.erb (4.2ms)
+Completed 200 OK in 475ms (Views: 471.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cart/add?id=4" for 127.0.0.1 at 2015-05-11 19:27:54 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  Rendered cart/add.html.erb within layouts/application (3.3ms)
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7
+  Rendered cart/_cart.html.erb (1.9ms)
+Completed 200 OK in 444ms (Views: 435.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/cart/add?id=4" for 127.0.0.1 at 2015-05-11 19:27:55 +0200
+Processing by CartController#add as HTML
+  Parameters: {"authenticity_token"=>"tw2GdHssEpw5oz2udqbeIAZK4AVKDaF6VmfF2n9gZFM=", "id"=>"4"}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1[0m
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (7.6ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7 AND `cart_items`.`tshirt_id` = 4
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.6ms)[0m  INSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `price`, `tshirt_id`, `updated_at`) VALUES (1, 7, '2015-05-11 17:27:55', 75.0, 4, '2015-05-11 17:27:55')
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 26.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 19:27:55 +0200
+Processing by CatalogController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1[0m
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (2, 1)[0m
+  Rendered catalog/_tshirts.html.erb (10.0ms)
+  Rendered catalog/index.html.erb within layouts/application (19.6ms)
+  Rendered cart/_cart_notice.html.erb (2.6ms)
+  [1m[35mCartItem Load (0.5ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  Rendered cart/_item.html.erb (2.1ms)
+  Rendered cart/_cart.html.erb (43.0ms)
+Completed 200 OK in 520ms (Views: 516.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/admin/manufacturer.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/cart.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/catalog.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/admin/tshirt.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/about.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:56 +0200
+
+
+Started GET "/assets/about.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/assets/admin/manufacturer.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/assets/admin/tshirt.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/assets/cart.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/assets/catalog.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2015-05-11 19:27:57 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.1ms)
+
+
+Started GET "/cart/remove?id=4" for 127.0.0.1 at 2015-05-11 19:27:59 +0200
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCart Load (0.2ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.5ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  Rendered cart/remove.html.erb within layouts/application (2.8ms)
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  Rendered cart/_item.html.erb (1.9ms)
+  Rendered cart/_cart.html.erb (22.1ms)
+Completed 200 OK in 467ms (Views: 458.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/cart/remove?id=4" for 127.0.0.1 at 2015-05-11 19:28:01 +0200
+Processing by CartController#remove as HTML
+  Parameters: {"authenticity_token"=>"tw2GdHssEpw5oz2udqbeIAZK4AVKDaF6VmfF2n9gZFM=", "id"=>"4"}
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCartItem Load (3.8ms)[0m  SELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7 AND `cart_items`.`tshirt_id` = 4  ORDER BY `cart_items`.`id` ASC LIMIT 1
+  [1m[36mCartItem Load (1.4ms)[0m  [1mSELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`id` = 5 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.8ms)[0m  [1mDELETE FROM `cart_items` WHERE `cart_items`.`id` = 5[0m
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-11 19:28:01 +0200
+Processing by CatalogController#index as HTML
+  [1m[35mCart Load (3.8ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 7 LIMIT 1
+  [1m[36mTshirt Load (0.7ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (2, 1)
+  Rendered catalog/_tshirts.html.erb (8.0ms)
+  Rendered catalog/index.html.erb within layouts/application (20.7ms)
+  Rendered cart/_cart_notice.html.erb (0.1ms)
+  [1m[36mCartItem Load (0.5ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 7[0m
+  Rendered cart/_cart.html.erb (14.1ms)
+Completed 200 OK in 518ms (Views: 507.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/about.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/cart.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/admin/tshirt.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/catalog.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/admin/manufacturer.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/about.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/admin/manufacturer.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/admin/tshirt.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/cart.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/catalog.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2015-05-11 19:28:02 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/erick/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/erick/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.4ms)

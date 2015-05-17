@@ -32,6 +32,8 @@ gem 'will_paginate', '3.0.5'
 
 gem 'RedCloth', '4.2.9'
 
+gem 'authlogic', '3.4.2'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

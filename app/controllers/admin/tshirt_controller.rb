@@ -1,4 +1,4 @@
-class Admin::TshirtController < ApplicationController
+class Admin::TshirtController < AuthenticatedController
   def new
     load_data
     @tshirt = Tshirt.new

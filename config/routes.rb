@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  get 'user/new'
+  post 'user/create'
+  get 'user/show'
+  get 'user/show/:id' => 'user#show'
+  get 'user/edit'
+  post 'user/update'
+
+  get 'user_sessions/new'
+  get 'user_sessions/create' # for showing failed login screen after restarting web server
+  post 'user_sessions/create'
+  get 'user_sessions/destroy'
+
   root :to => 'catalog#index'
 
   get 'cart/add'

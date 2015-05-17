@@ -1,5 +1,6 @@
 class CatalogController < ApplicationController
-    before_filter :initialize_cart
+    before_filter :require_no_user
+
 
   def show
     @tshirt = Tshirt.find(params[:id])

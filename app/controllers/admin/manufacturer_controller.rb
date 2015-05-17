@@ -1,4 +1,4 @@
-class Admin::ManufacturerController < ApplicationController
+class Admin::ManufacturerController < AuthenticatedController
   def new
     @manufacturer = Manufacturer.new
     @page_title = 'Create new manufacturer'
