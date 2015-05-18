@@ -1,7 +1,7 @@
-require 'test_helper'
+#require 'test_helper'
 
-class UserSessionTest < ActiveSupport::TestCase
+#class UserSessionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-end
+#send
