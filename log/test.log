@@ -8303,6 +8303,7 @@ Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`
 Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 17:31:48', '2015-05-18 17:31:48', 980190962)
   [1m[35m (1.8ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+<<<<<<< HEAD
 =======
   [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
   [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 15:24:45', '2015-05-18 15:24:45', 980190962)
@@ -8575,10 +8576,26 @@ Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`
   [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `tshirts`[0m
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 1)[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `carts`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:02:47', '2015-05-18 18:02:47', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:02:47', '2015-05-18 18:02:47', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM `cart_items`
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:02:47', '2015-05-18 18:02:47', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:02:47', '2015-05-18 18:02:47', 298486374)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `tshirts`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 1)[0m
+>>>>>>> bc8bfa624a0eeef528a3dbd27bcbb33267f4c08d
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 1)[0m
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 1)[0m
+<<<<<<< HEAD
   [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `user_sessions`
   [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_sessions` () VALUES ()[0m
   [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `user_sessions` () VALUES ()
@@ -9798,12 +9815,582 @@ Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`
   [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
   [1m[35mFixture Insert (1.1ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-05-18 17:59:04', '2015-05-18 17:59:04')
   [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `tshirts`[0m
+=======
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `manufacturers`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-05-18 18:02:47', '2015-05-18 18:02:47')[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_create
+----------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_edit
+--------------------------------------------
+Processing by Admin::ManufacturerController#edit as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+Admin::ManufacturerControllerTest: test_failing_create
+------------------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `manufacturers`[0m
+Processing by Admin::ManufacturerController#create as HTML
+  Parameters: {"manufacturer"=>{"name"=>"Kevinva"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+Admin::ManufacturerControllerTest: test_index
+---------------------------------------------
+Processing by Admin::ManufacturerController#index as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+Admin::ManufacturerControllerTest: test_new
+-------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_show
+--------------------------------------------
+Processing by Admin::ManufacturerController#show as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+Admin::ManufacturerControllerTest: test_test_destroy
+----------------------------------------------------
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+Processing by Admin::ManufacturerController#destroy as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_update
+----------------------------------------------
+Processing by Admin::ManufacturerController#update as HTML
+  Parameters: {"id"=>"1", "manufacturer"=>{"name"=>"OtroNombre", "telephone"=>"123456789"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------
+Admin::TshirtControllerTest: test_create
+----------------------------------------
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------
+Admin::TshirtControllerTest: test_failing_create
+------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+Processing by Admin::TshirtController#create as HTML
+  Parameters: {"tshirt"=>{"size"=>"L"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------
+Admin::TshirtControllerTest: test_new
+-------------------------------------
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------------------
+AboutControllerTest: test_should_get_index
+------------------------------------------
+Processing by AboutController#index as HTML
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 1275ms (Views: 1274.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------
+UserTest: test_user_account
+---------------------------
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#new as HTML
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered user/_form.html.erb (18.1ms)
+ApplicationController::current_user
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 37ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+Started POST "/user/create" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `email`, `last_request_at`, `login`, `login_count`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:02:48', '0925368cde319c9196ec774d21cdccd00b6f22c2df9124801edb4b080061894a2d04a199c56301cfc364ba3397d04a3e6abb1ec9629743b24fe2374cb86b5f8a', '2015-05-18 18:02:48', '127.0.0.1', 'kevin@emporium.com', '2015-05-18 18:02:48', 'kevin', 1, 'Kevin Valle', 'UNl1D9phKWwXtPZhqCB', 'dfhqghTTbzblsoywX4Jq', '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44', '2015-05-18 18:02:48')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 19ms (ActiveRecord: 2.1ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2015-05-18 18:02:48', `perishable_token` = '68davboJPd2omkk1i75', `updated_at` = '2015-05-18 18:02:48' WHERE `users`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 19ms (Views: 11.4ms | ActiveRecord: 1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+Started GET "/user/show/?id=1" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-05-18 18:02:48', `perishable_token` = 'Z28U9QgOxSnWrMKPEfh', `updated_at` = '2015-05-18 18:02:48' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+Started GET "/user/edit?id=1" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#edit as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_request_at` = '2015-05-18 18:02:48', `perishable_token` = 'LsgQS27p7PuCJ4k6dpiv', `updated_at` = '2015-05-18 18:02:48' WHERE `users`.`id` = 1
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/_form.html.erb (0.6ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 1.5ms)
+Started POST "/user/update" for 127.0.0.1 at 2015-05-18 20:02:48 +0200
+Processing by UserController#update as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2015-05-18 18:02:49', `perishable_token` = 'sLxdQp4fCyEP9eoJtRH', `updated_at` = '2015-05-18 18:02:49' WHERE `users`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (15.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`persistence_token` = BINARY 'aff99c82858cffc37d5c8b08ebf2e4e29fd92223cfa160165f6074e60b97e424958589491546a05b732c537f6cfa655498a9a5e62ac4b4a706b248faf4e1a005' AND `users`.`id` != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`name` = BINARY 'Kevin Valle' AND `users`.`id` != 1) LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`login` = BINARY 'kevin' AND `users`.`id` != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`email` = BINARY 'kevin@emporium.com' AND `users`.`id` != 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '70ed056cb1695ebade115d66515747f278954123d5c0689aaab711bd95ccf76693a511b111c8488245e82f587e513f5c2d091407942296236abb11fec7dbfa44' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `crypted_password` = '0caa4cc3131662d5aab5cc3f9b6bfa59f3e0f8c5bca073016090cbaa843eebed18b871acfb186a7e480ceddbe6b321984b1649ae0ccfb955242f58c2b4897691', `current_login_at` = '2015-05-18 18:02:49', `last_login_at` = '2015-05-18 18:02:48', `last_login_ip` = '127.0.0.1', `last_request_at` = '2015-05-18 18:02:49', `login_count` = 2, `password_salt` = 'kYvzyQ4biAhVlvNHdjJ', `perishable_token` = 'bzSZg284GN8SXLSsorO', `persistence_token` = 'aff99c82858cffc37d5c8b08ebf2e4e29fd92223cfa160165f6074e60b97e424958589491546a05b732c537f6cfa655498a9a5e62ac4b4a706b248faf4e1a005', `updated_at` = '2015-05-18 18:02:49' WHERE `users`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 28ms (ActiveRecord: 17.6ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2015-05-18 18:02:49', `perishable_token` = 'O24XPD3ZlM5DGfBKzTfo', `updated_at` = '2015-05-18 18:02:49' WHERE `users`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (13.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+AuthenticationTest: test_failed_login
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '514094a727dd22ed2849471f0d332b33662956365dcd4dec0279b03d97f5f3470796ef6e89a805d0673c1f0f10112dc22bdcf419f212e56a37c724096c9c11fb' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `email`, `login`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:02:49', '70ff83a7ca5c7ad48cea80d8a437401801ba36c16f410931c7f7bc786067fed6c5c434fb894e7786abd7c0043cf0c6f19b8d4e77a1245c1a869125a04d06b848', 'kevin@emporium.com', 'kevin', 'Kevin Valle', 'q3dCdflWg1bJHShG9fx', '3KwgTajuB3MnqIc0KEBm', '514094a727dd22ed2849471f0d332b33662956365dcd4dec0279b03d97f5f3470796ef6e89a805d0673c1f0f10112dc22bdcf419f212e56a37c724096c9c11fb', '2015-05-18 18:02:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"troli", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'troli'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered user_sessions/_form.html.erb (2.4ms)
+ApplicationController::current_user
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (1.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+AuthenticationTest: test_successful_login
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '7f7b9415ec3b4eadc72eea97ca1128a8ce38cc07e6da2246455f210c1679103e6621d9408d9ba9dc662c5bf5f83073bb52a1192247a525ee24d7438ccb4c9a1a' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `email`, `login`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:02:49', '6603c632ddfd453608c7ad6ffcd13c182a83c5ae23229d3ebffa8bbb48e2f2e8239ee14740bda09e0ca0dc15418e7f3790401ce3b56f36645453e25df03ecd4e', 'kevin@emporium.com', 'kevin', 'Kevin Valle', 'Bx6BMY9LdcEBBNV7hhLF', '5Wd72jJ6J4udstZgTDmS', '7f7b9415ec3b4eadc72eea97ca1128a8ce38cc07e6da2246455f210c1679103e6621d9408d9ba9dc662c5bf5f83073bb52a1192247a525ee24d7438ccb4c9a1a', '2015-05-18 18:02:49')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"kevin", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_login_at` = '2015-05-18 18:02:49', `current_login_ip` = '127.0.0.1', `last_request_at` = '2015-05-18 18:02:49', `login_count` = 1, `perishable_token` = 'CU00uFJDA1Qg4GkIn2', `updated_at` = '2015-05-18 18:02:49' WHERE `users`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/tshirt/new
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+  [1m[35m (1.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:02:49', 'Fabricante', '123321123', '2015-05-18 18:02:49')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:02:49', 'Fabricante2', '123321113', '2015-05-18 18:02:49')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:02:49', 'Fabricante3', '1233211123', '2015-05-18 18:02:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:02:49', 'Fabricante4', '1233211123', '2015-05-18 18:02:49')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------
+CatalogTest: test_browse
+------------------------
+Started GET "/catalog/index" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by CatalogController#index as HTML
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `tshirts`
+  Rendered catalog/_tshirts.html.erb (49.5ms)
+ApplicationController::current_user
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 1.1ms)
+Started GET "/catalog/index?page=2" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by CatalogController#index as HTML
+  Parameters: {"page"=>"2"}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  Rendered catalog/_tshirts.html.erb (2.1ms)
+ApplicationController::current_user
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.7ms)
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`club` = 'Madrid' LIMIT 1[0m
+Started GET "/catalog/latest" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by CatalogController#latest as HTML
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5
+  [1m[36mManufacturer Load (0.1ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  Rendered catalog/_tshirts.html.erb (3.3ms)
+ApplicationController::current_user
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.1ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.1ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------
+CartControllerTest: test_add
+----------------------------
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `cart_items`
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-18 18:02:49', '2015-05-18 18:02:49')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190963 AND `cart_items`.`tshirt_id` = 4
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `tshirt_id`, `updated_at`) VALUES (1, 980190963, '2015-05-18 18:02:49', 4, '2015-05-18 18:02:49')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+Redirected to http://test.host/
+Completed 302 Found in 36ms (ActiveRecord: 2.5ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190963 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190963[0m
+  [1m[35m (1.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------
+CartControllerTest: test_clear
+------------------------------
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-18 18:02:49', '2015-05-18 18:02:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190964 AND `cart_items`.`tshirt_id` = 4[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `tshirt_id`, `updated_at`) VALUES (1, 980190964, '2015-05-18 18:02:49', 4, '2015-05-18 18:02:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+Redirected to http://test.host/
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190964 LIMIT 1[0m
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190964
+Processing by CartController#clear as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190964 LIMIT 1[0m
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190964
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `cart_items` WHERE `cart_items`.`id` = 980190964
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190964 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190964[0m
+  [1m[35m (11.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------
+CartControllerTest: test_remove
+-------------------------------
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-05-18 18:02:49', '2015-05-18 18:02:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mTshirt Load (0.1ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965 AND `cart_items`.`tshirt_id` = 4[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `tshirt_id`, `updated_at`) VALUES (1, 980190965, '2015-05-18 18:02:49', 4, '2015-05-18 18:02:49')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+Redirected to http://test.host/
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190965 LIMIT 1[0m
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190965
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCart Load (0.2ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190965 LIMIT 1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mCartItem Load (0.3ms)[0m  [1mSELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965 AND `cart_items`.`tshirt_id` = 4  ORDER BY `cart_items`.`id` ASC LIMIT 1[0m
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`id` = 980190965 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `cart_items` WHERE `cart_items`.`id` = 980190965
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+Redirected to http://test.host/
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190965 LIMIT 1[0m
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190965
+  [1m[36m (1.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------
+TshirtIntegrationTest: test_tshirt_administration
+-------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:02:49', 'Prueba', '123456789', '2015-05-18 18:02:49')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`   ORDER BY `manufacturers`.`id` ASC LIMIT 1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:02:49 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `carts`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:03:02', '2015-05-18 18:03:02', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:03:02', '2015-05-18 18:03:02', 298486374)[0m
+  [1m[35mFixture Delete (1.1ms)[0m  DELETE FROM `cart_items`
+  [1m[36mFixture Insert (1.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:03:02', '2015-05-18 18:03:02', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 18:03:02', '2015-05-18 18:03:02', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `tshirts`[0m
+>>>>>>> bc8bfa624a0eeef528a3dbd27bcbb33267f4c08d
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 1)[0m
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 1)[0m
   [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 1)
   [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 1)[0m
+<<<<<<< HEAD
   [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM `user_sessions`
   [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `user_sessions` () VALUES ()[0m
   [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `user_sessions` () VALUES ()
@@ -10124,3 +10711,250 @@ Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`
 Mysql2::Error: Field 'name' doesn't have a default value: INSERT INTO `users` (`created_at`, `updated_at`, `id`) VALUES ('2015-05-18 17:59:05', '2015-05-18 17:59:05', 980190962)
   [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+=======
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `manufacturers`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-05-18 18:03:02', '2015-05-18 18:03:02')[0m
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------
+CatalogTest: test_browse
+------------------------
+Started GET "/catalog/index" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by CatalogController#index as HTML
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mTshirt Load (0.4ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0[0m
+  [1m[35mManufacturer Load (0.4ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+  Rendered catalog/_tshirts.html.erb (40.1ms)
+  Rendered catalog/index.html.erb within layouts/application (43.4ms)
+ApplicationController::current_user
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 88ms (Views: 66.8ms | ActiveRecord: 2.5ms)
+Started GET "/catalog/index?page=2" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by CatalogController#index as HTML
+  Parameters: {"page"=>"2"}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mTshirt Load (0.4ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 5[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  Rendered catalog/_tshirts.html.erb (2.3ms)
+  Rendered catalog/index.html.erb within layouts/application (2.7ms)
+ApplicationController::current_user
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`club` = 'Madrid' LIMIT 1
+Started GET "/catalog/latest" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by CatalogController#latest as HTML
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)
+  Rendered catalog/_tshirts.html.erb (3.3ms)
+  Rendered catalog/latest.html.erb within layouts/application (3.8ms)
+ApplicationController::current_user
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.7ms)
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------
+AuthenticationTest: test_failed_login
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '80d290ca35574bf1f31b8b8cdf869ec8c04d7c65fd43177e334e2e0762dd22bfbf134fd32e20cafc706117feb2977e9305f0d9542da13b247346ab3634ad64b2' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `email`, `login`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:03:02', '472b7072ed42e9cbdab1bc842d0cb2db61953b6d724449007b70e36bf916f6d551cca234e86351a8c8be9bd447f90de97ee3c9a3f7d80a5982dacd87296d0fe3', 'kevin@emporium.com', 'kevin', 'Kevin Valle', 'yBBU5mRru25zKE1HdAFU', 'kx59lnAPBcXK08eUNq9', '80d290ca35574bf1f31b8b8cdf869ec8c04d7c65fd43177e334e2e0762dd22bfbf134fd32e20cafc706117feb2977e9305f0d9542da13b247346ab3634ad64b2', '2015-05-18 18:03:02')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"troli", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'troli'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered user_sessions/_form.html.erb (5.8ms)
+ApplicationController::current_user
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.8ms)
+  [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------------
+AuthenticationTest: test_successful_login
+-----------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY 'faa2307263e9aa1d479133b2e28567824bd867a2ae0d1761665d4485f55626861baf6a65ac3a71e0832008aee626e938300eb0811f154cce519ee045b807495a' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `email`, `login`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:03:02', '919d12060f59cf1dd86a2b4d65e3fb7b5c6537dcec4bcc5dba9da795c081d9294437ccf8606812b7590952b18711a8bbfddd8e7b35c1516726d454609807bbf6', 'kevin@emporium.com', 'kevin', 'Kevin Valle', 'WRHgRlUK5psKZzj707qm', '0HhnCU9B31YbBce8yqV', 'faa2307263e9aa1d479133b2e28567824bd867a2ae0d1761665d4485f55626861baf6a65ac3a71e0832008aee626e938300eb0811f154cce519ee045b807495a', '2015-05-18 18:03:02')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"kevin", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_login_at` = '2015-05-18 18:03:02', `current_login_ip` = '127.0.0.1', `last_request_at` = '2015-05-18 18:03:02', `login_count` = 1, `perishable_token` = 'Etalc1ozwOrwJdzqYMo', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 5
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/tshirt/new
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+  [1m[35m (4.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+TshirtIntegrationTest: test_tshirt_administration
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-05-18 18:03:02', 'Prueba', '123456789', '2015-05-18 18:03:02')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`   ORDER BY `manufacturers`.`id` ASC LIMIT 1[0m
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (2.9ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+---------------------------
+UserTest: test_user_account
+---------------------------
+Started GET "/user/new" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#new as HTML
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered user/_form.html.erb (1.1ms)
+ApplicationController::current_user
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+Started POST "/user/create" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `email`, `last_request_at`, `login`, `login_count`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-05-18 18:03:02', '6120797bcc2d1047a2d7d6c4e4c902718c9fec54e13e9959137771d8d48b6845469a9016e61b9779273f100b7ff6ceb496e3c1ba692cd1920e44ccb5c6d9d81a', '2015-05-18 18:03:02', '127.0.0.1', 'kevin@emporium.com', '2015-05-18 18:03:02', 'kevin', 1, 'Kevin Valle', '29qTOdx00OwjvU5KjrS9', 'RA239HZGpoa2oCY7bRK', '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb', '2015-05-18 18:03:02')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 13ms (ActiveRecord: 2.9ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-05-18 18:03:02', `perishable_token` = 'AcghAwANolMXo623UzUc', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+Started GET "/user/show/?id=6" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"6"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2015-05-18 18:03:02', `perishable_token` = 'ZOM0XywyOo4b88xDm0Gn', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 6 LIMIT 1
+Started GET "/user/edit?id=6" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#edit as HTML
+  Parameters: {"id"=>"6"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-05-18 18:03:02', `perishable_token` = 'r1YoEzuQmFznYuAj6OI', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/_form.html.erb (0.4ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 1.0ms)
+Started POST "/user/update" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#update as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-05-18 18:03:02', `perishable_token` = 'Rq8z8eOxBlDSBOoRvulE', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`persistence_token` = BINARY '53c43e77284519f8c665514324eaa280caccfde26c00b1a94eeb309cc5e1208375da98b522b5ad4d1ff385d2251d4709b18d1c106b20c8bf74b90a3aa5c73e5e' AND `users`.`id` != 6) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`name` = BINARY 'Kevin Valle' AND `users`.`id` != 6) LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`login` = BINARY 'kevin' AND `users`.`id` != 6) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`email` = BINARY 'kevin@emporium.com' AND `users`.`id` != 6) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '518197386ac524c2d07f46eb30f8e867264d42f5a5b2835c26b498a7d6fb6fc0ce4a6469cad1452c084f95baba7161abcbe6cbebb696353bdb8ac1d8017195bb' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `crypted_password` = '95808224b45606c80d2b1fdfefc28b6fd5c3f63c1c6679dd023369f5c5f3ae0f995c0b7d91df7c65f79f3ca57f528d83f5def494baf09e826b84978f73c7e062', `current_login_at` = '2015-05-18 18:03:02', `last_login_at` = '2015-05-18 18:03:02', `last_login_ip` = '127.0.0.1', `last_request_at` = '2015-05-18 18:03:02', `login_count` = 2, `password_salt` = 'suYsNJJYnbsUlApnDaf', `perishable_token` = 'u6oo08bFPsQL7SDYtuT', `persistence_token` = '53c43e77284519f8c665514324eaa280caccfde26c00b1a94eeb309cc5e1208375da98b522b5ad4d1ff385d2251d4709b18d1c106b20c8bf74b90a3aa5c73e5e', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-05-18 20:03:02 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-05-18 18:03:02', `perishable_token` = 'zMtxChYf4MTvfU3a1RH', `updated_at` = '2015-05-18 18:03:02' WHERE `users`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.0ms)
+  [1m[36m (17.3ms)[0m  [1mROLLBACK[0m
+>>>>>>> bc8bfa624a0eeef528a3dbd27bcbb33267f4c08d
