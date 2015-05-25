@@ -1,0 +1,96 @@
+Searching 297 files for "book"
+
+/Users/ErickSanchez/workspace/eshop7/app/controllers/checkout_controller.rb:
+   44    def populate_order
+   45      for cart_item in @cart.cart_items
+   46:       order_item = OrderItem.new(:book_id => cart_item.tshirt_id,
+   47                                   :price => cart_item.price,
+   48                                   :amount => cart_item.amount)
+
+/Users/ErickSanchez/workspace/eshop7/app/models/cart_item.rb:
+    1  class CartItem < ActiveRecord::Base
+    2:   # attr_accessible :book_id, :cart_id, :price, :amount
+    3  
+    4    belongs_to :cart
+
+/Users/ErickSanchez/workspace/eshop7/db/schema.rb:
+   36  
+   37    create_table "order_items", force: true do |t|
+   38:     t.integer  "book_id"
+   39      t.integer  "order_id"
+   40      t.float    "price"
+
+/Users/ErickSanchez/workspace/eshop7/db/structure.sql:
+   76  CREATE TABLE `order_items` (
+   77    `id` int(11) NOT NULL AUTO_INCREMENT,
+   78:   `book_id` int(11) DEFAULT NULL,
+   79    `order_id` int(11) DEFAULT NULL,
+   80    `price` float DEFAULT NULL,
+
+/Users/ErickSanchez/workspace/eshop7/db/migrate/20150525091701_create_order_items.rb:
+    2    def self.up
+    3      create_table :order_items do |t|
+    4:       t.integer :book_id
+    5        t.integer :order_id
+    6        t.float :price
+
+5 matches across 5 files
+
+
+Searching 297 files for "book"
+
+/Users/ErickSanchez/workspace/eshop7/app/controllers/checkout_controller.rb:
+   44    def populate_order
+   45      for cart_item in @cart.cart_items
+   46:       order_item = OrderItem.new(:book_id => cart_item.tshirt_id,
+   47                                   :price => cart_item.price,
+   48                                   :amount => cart_item.amount)
+
+/Users/ErickSanchez/workspace/eshop7/db/schema.rb:
+   36  
+   37    create_table "order_items", force: true do |t|
+   38:     t.integer  "book_id"
+   39      t.integer  "order_id"
+   40      t.float    "price"
+
+/Users/ErickSanchez/workspace/eshop7/db/structure.sql:
+   76  CREATE TABLE `order_items` (
+   77    `id` int(11) NOT NULL AUTO_INCREMENT,
+   78:   `book_id` int(11) DEFAULT NULL,
+   79    `order_id` int(11) DEFAULT NULL,
+   80    `price` float DEFAULT NULL,
+
+/Users/ErickSanchez/workspace/eshop7/db/migrate/20150525091701_create_order_items.rb:
+    2    def self.up
+    3      create_table :order_items do |t|
+    4:       t.integer :book_id
+    5        t.integer :order_id
+    6        t.float :price
+
+4 matches across 4 files
+
+
+Searching 297 files for "book"
+
+/Users/ErickSanchez/workspace/eshop7/app/controllers/checkout_controller.rb:
+   44    def populate_order
+   45      for cart_item in @cart.cart_items
+   46:       order_item = OrderItem.new(:book_id => cart_item.tshirt_id,
+   47                                   :price => cart_item.price,
+   48                                   :amount => cart_item.amount)
+
+/Users/ErickSanchez/workspace/eshop7/db/structure.sql:
+   76  CREATE TABLE `order_items` (
+   77    `id` int(11) NOT NULL AUTO_INCREMENT,
+   78:   `tshirt_id` int(11) DEFAULT NULL,
+   79    `order_id` int(11) DEFAULT NULL,
+   80    `price` float DEFAULT NULL,
+
+/Users/ErickSanchez/workspace/eshop7/db/migrate/20150525091701_create_order_items.rb:
+    2    def self.up
+    3      create_table :order_items do |t|
+    4:       t.integer :tshirt_id
+    5        t.integer :order_id
+    6        t.float :price
+
+3 matches across 3 files

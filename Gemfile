@@ -34,6 +34,18 @@ gem 'RedCloth', '4.2.9'
 
 gem 'authlogic', '3.4.2'
 
+gem 'countries', '0.9.3', :require => 'iso3166'
+
+gem 'country_select', '1.3.1'
+
+gem 'activemerchant', '1.43.1'
+
+gem 'eu_central_bank', '0.3.8'
+
+gem 'money'
+
+gem 'soap4r'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

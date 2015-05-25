@@ -1,5 +1,27 @@
 Rails.application.routes.draw do
-  
+  namespace :admin do
+  get 'order/index'
+  end
+
+  namespace :admin do
+  get 'order/show'
+  end
+
+  namespace :admin do
+  get 'order/close'
+  end
+
+  get 'checkout/index'
+
+  get 'checkout/place_order'
+
+  get 'checkout/thank_you'
+
+  get 'checkout' => 'checkout#index'
+
+  post 'checkout/submit_order'
+  get 'checkout/thank_you'
+
   get 'user/new'
   post 'user/create'
   get 'user/show'
@@ -88,6 +110,13 @@ Rails.application.routes.draw do
   end
 
   get 'about/index'
+
+  post 'admin/order/close'
+  post 'admin/order/destroy'
+  get 'admin/order/show'
+  get 'admin/order/show/:id' => 'admin/order#show'
+  get 'admin/order/index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
