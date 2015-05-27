@@ -42,7 +42,7 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_template 'user_sessions/new'
       assert_tag :tag => 'div', :attributes => { :id => 'errorExplanation' }
-      assert_tag :tag => 'li', :content => 'You must be logged out to access this page.'
+      assert_tag :tag => 'div', :content => 'You must be logged in to access this page.'
     end
 
     private
