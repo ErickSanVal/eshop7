@@ -28,7 +28,7 @@ class CheckoutTest < ActionDispatch::IntegrationTest
       :ship_to_city => 'Paterna',
       :ship_to_postal_code => '123456',
       :ship_to_country_code => 'Spain',
-      :card_type => 'Visa',
+	  :card_type => 'Visa',
       :card_number => '4007000000027',
       :card_expiration_month => '3',
       :card_expiration_year => '2018',

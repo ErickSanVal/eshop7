@@ -9,34 +9,40 @@ one:
  size: "L"
  club: "Madrid"
  country: "Spain"
+ price: 2.5
  manufacturer_id: 1
 two:
  id: 2
  size: "S"
  club: "Barcelona"
  country: "Spain"
+ price: 2.5
  manufacturer_id: 1
 three:
  id: 3
  size: "XXL"
  club: "Paterna"
  country: "Mexico"
+ price: 2.5
  manufacturer_id: 1
 four:
  id: 4
  size: "L"
  club: "Cadiz"
  country: "Spain"
+ price: 2.5
  manufacturer_id: 1
 five:
  id: 5
  size: "S"
  club: "Mentira"
  country: "Imaginacion"
+ price: 2.5
  manufacturer_id: 1
 six:
  id: 6
  size: "SL"
  club: "Mentiras"
  country: "Imaginacion"
+ price: 2.5
  manufacturer_id: 1
