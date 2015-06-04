@@ -21120,3 +21120,1630 @@ ApplicationController::current_user_session
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
 Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mFixture Delete (27.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:08:21', '2015-06-02 09:08:21', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:08:21', '2015-06-02 09:08:21', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:08:21', '2015-06-02 09:08:21')
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:21', 'Fabricante', '123321123', '2015-06-02 09:08:21')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:21', 'Fabricante2', '123321113', '2015-06-02 09:08:21')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:21', 'Fabricante3', '1233211123', '2015-06-02 09:08:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:21', 'Fabricante4', '1233211123', '2015-06-02 09:08:21')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:08:22', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:08:22')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:08:22', 980190963, 155.25, 1, '2015-06-02 09:08:22')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Order 980190963 failed due to raised exception: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube.
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE `orders` SET `error_message` = 'Exception raised: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube', `status` = 'failed', `updated_at` = '2015-06-02 09:08:22' WHERE `orders`.`id` = 980190963[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  BEGIN
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.8ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:08:44', '2015-06-02 09:08:44', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:08:44', '2015-06-02 09:08:44', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:08:44', '2015-06-02 09:08:44')
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:44', 'Fabricante', '123321123', '2015-06-02 09:08:44')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:44', 'Fabricante2', '123321113', '2015-06-02 09:08:44')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:44', 'Fabricante3', '1233211123', '2015-06-02 09:08:44')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (30.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:08:44', 'Fabricante4', '1233211123', '2015-06-02 09:08:44')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:08:44', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:08:44')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:08:44', 980190964, 155.25, 1, '2015-06-02 09:08:44')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders`  WHERE `orders`.`id` = 980190964 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `order_items`  WHERE `order_items`.`order_id` = 980190964[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT `order_items`.* FROM `order_items`  WHERE `order_items`.`order_id` = 980190964
+  [1m[36m (1.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:00', '2015-06-02 09:09:00', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:00', '2015-06-02 09:09:00', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:09:00', '2015-06-02 09:09:00')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:09:00', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:09:00')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:09:00', 980190965, 155.25, 1, '2015-06-02 09:09:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:00', 'Fabricante', '123321123', '2015-06-02 09:09:00')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:00', 'Fabricante2', '123321113', '2015-06-02 09:09:00')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:00', 'Fabricante3', '1233211123', '2015-06-02 09:09:00')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:00', 'Fabricante4', '1233211123', '2015-06-02 09:09:00')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.1ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.1ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:07', '2015-06-02 09:09:07', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:07', '2015-06-02 09:09:07', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:09:07', '2015-06-02 09:09:07')
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:07', 'Fabricante', '123321123', '2015-06-02 09:09:07')[0m
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:07', 'Fabricante2', '123321113', '2015-06-02 09:09:07')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (6.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:07', 'Fabricante3', '1233211123', '2015-06-02 09:09:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (4.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:07', 'Fabricante4', '1233211123', '2015-06-02 09:09:07')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.5ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:09:07', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:09:07')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:09:07', 980190966, 155.25, 1, '2015-06-02 09:09:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Order 980190966 failed due to raised exception: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube.
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `orders` SET `error_message` = 'Exception raised: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube', `status` = 'failed', `updated_at` = '2015-06-02 09:09:08' WHERE `orders`.`id` = 980190966
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:33', '2015-06-02 09:09:33', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:09:33', '2015-06-02 09:09:33', 298486374)[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:09:33', '2015-06-02 09:09:33')
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:09:33', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:09:33')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:09:33', 980190967, 155.25, 1, '2015-06-02 09:09:33')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:33', 'Fabricante', '123321123', '2015-06-02 09:09:33')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:33', 'Fabricante2', '123321113', '2015-06-02 09:09:33')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:33', 'Fabricante3', '1233211123', '2015-06-02 09:09:33')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:09:33', 'Fabricante4', '1233211123', '2015-06-02 09:09:33')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:12:11', '2015-06-02 09:12:11', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:12:11', '2015-06-02 09:12:11', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:12:11', '2015-06-02 09:12:11')
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------
+UserTest: test_user_account
+---------------------------
+Started GET "/user/new" for 127.0.0.1 at 2015-06-02 11:12:11 +0200
+Processing by UserController#new as HTML
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered user/_form.html.erb (35.7ms)
+  Rendered user/new.html.erb within layouts/application (50.3ms)
+ApplicationController::current_user
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 746ms (Views: 671.8ms | ActiveRecord: 1.8ms)
+Started POST "/user/create" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#create as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `email`, `last_request_at`, `login`, `login_count`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-06-02 09:12:12', '77a0de092b4d85ffc60353cce0f0b23e6a80792ce282d3ca5bf8e1a76afcf0c9a2a2cdfa555b618df7b9549dc2c2e32a19a2d5d26cd56073efebc62883ee3157', '2015-06-02 09:12:12', '127.0.0.1', 'kevin@emporium.com', '2015-06-02 09:12:12', 'kevin', 1, 'Kevin Valle', 'ZPwgrR1dJ7LymhGH522s', 'Re0E0sy4nVSU5OU9IZ56', '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7', '2015-06-02 09:12:12')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 51ms (ActiveRecord: 2.5ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-06-02 09:12:12', `perishable_token` = 'Vjg6LslNuebT38kPVjd', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+Started GET "/user/show/?id=1" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_request_at` = '2015-06-02 09:12:12', `perishable_token` = '1FrpAp9TRmuVyyhSNaj', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/show.html.erb within layouts/application (0.4ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+Started GET "/user/edit?id=1" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#edit as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-06-02 09:12:12', `perishable_token` = '7BlKIbWXykCXfmtqWmU', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/_form.html.erb (0.6ms)
+  Rendered user/edit.html.erb within layouts/application (1.8ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 1.1ms)
+Started POST "/user/update" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#update as HTML
+  Parameters: {"user"=>{"name"=>"Kevin Valle", "login"=>"kevin", "email"=>"kevin@emporium.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-06-02 09:12:12', `perishable_token` = 'eOEzeADNg1MGxpL4xbo', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (15.5ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`persistence_token` = BINARY 'b1034ca9ce10cd62ec43b7cbaf76f92411e32d97149d5c824e8c6f0db1eccc1bf1ca4e6fc95181df69380243344a6d453c0550b9e888c5a5cee1dd2d523631cd' AND `users`.`id` != 1) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`name` = BINARY 'Kevin Valle' AND `users`.`id` != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE (`users`.`login` = BINARY 'kevin' AND `users`.`id` != 1) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE (`users`.`email` = BINARY 'kevin@emporium.com' AND `users`.`id` != 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`persistence_token` = '03f4a664a7f421401fec5bb1a82e9fb7012fc6c7bfdc8684f098045b874ab82efdc8e23d93b5e72ffb071866a23172abde24fa593bb77267feb009593fb86eb7' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `crypted_password` = 'da7c677bdc42441cb7cc24bad4d9a248d6e7a5f3b843c5242377b33cce21dbd7a2e15b78e007e0fc61c6646c2c757c90f027979eb2dd77ffe4ac5701e05235a0', `current_login_at` = '2015-06-02 09:12:12', `last_login_at` = '2015-06-02 09:12:12', `last_login_ip` = '127.0.0.1', `last_request_at` = '2015-06-02 09:12:12', `login_count` = 2, `password_salt` = 'BxRMSxtbrMXozzZjuKkA', `perishable_token` = 'AMgM6JStWjt2qnDtnhL3', `persistence_token` = 'b1034ca9ce10cd62ec43b7cbaf76f92411e32d97149d5c824e8c6f0db1eccc1bf1ca4e6fc95181df69380243344a6d453c0550b9e888c5a5cee1dd2d523631cd', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/user/show
+Completed 302 Found in 28ms (ActiveRecord: 18.5ms)
+Started GET "/user/show" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by UserController#show as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2015-06-02 09:12:12', `perishable_token` = 'ozvREjsS9sOuFzFPPmRN', `updated_at` = '2015-06-02 09:12:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+ApplicationController::current_user_session
+ApplicationController::current_user
+  Rendered user/show.html.erb within layouts/application (0.4ms)
+ApplicationController::current_user
+ApplicationController::current_user
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+  [1m[36m (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------
+CheckoutTest: test_empty_cart_shows_error_message
+-------------------------------------------------
+Started GET "/checkout" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by CheckoutController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:12', '2015-06-02 09:12:12')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Exists (0.5ms)[0m  SELECT  1 AS one FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190963 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 35ms (ActiveRecord: 3.6ms)
+  [1m[36m (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------
+CheckoutTest: test_submitting_order
+-----------------------------------
+Started POST "/cart/add" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:12', '2015-06-02 09:12:12')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190964 AND `cart_items`.`tshirt_id` = 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `price`, `tshirt_id`, `updated_at`) VALUES (1, 980190964, '2015-06-02 09:12:12', 2.5, 1, '2015-06-02 09:12:12')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 1 LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 18ms (ActiveRecord: 2.2ms)
+Started GET "/checkout" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by CheckoutController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190964 LIMIT 1[0m
+  [1m[35mTshirt Exists (0.3ms)[0m  SELECT  1 AS one FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190964 LIMIT 1
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered cart/_cart_notice.html.erb (0.3ms)
+  [1m[35mCartItem Load (0.4ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190964
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 1 LIMIT 1[0m
+  Rendered cart/_item.html.erb (1.0ms)
+  Rendered cart/_cart.html.erb (6.5ms)
+Completed 200 OK in 79ms (Views: 75.1ms | ActiveRecord: 1.6ms)
+  [1m[35mCart Load (0.4ms)[0m  SELECT  `carts`.* FROM `carts`   ORDER BY `carts`.`id` DESC LIMIT 1
+Started POST "/checkout/submit_order" for 127.0.0.1 at 2015-06-02 11:12:12 +0200
+Processing by CheckoutController#submit_order as HTML
+  Parameters: {"cart"=>{"id"=>"980190964"}, "order"=>{"email"=>"kevin@email.com", "phone_number"=>"123456789", "ship_to_first_name"=>"Troli", "ship_to_last_name"=>"Perez", "ship_to_address"=>"Calle del Campo", "ship_to_city"=>"Paterna", "ship_to_postal_code"=>"123456", "ship_to_country_code"=>"Spain", "card_type"=>"Visa", "card_number"=>"4007000000027", "card_expiration_month"=>"3", "card_expiration_year"=>"2018", "card_verification_value"=>"000"}}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190964 LIMIT 1[0m
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190964
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:12:12', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle del Campo', 'Paterna', 'SPAIN', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:12:12')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (1, '2015-06-02 09:12:12', 980190968, 2.5, 1, '2015-06-02 09:12:12')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Order 980190968 failed due to raised exception: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube.
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `orders` SET `error_message` = 'Exception raised: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube', `status` = 'failed', `updated_at` = '2015-06-02 09:12:13' WHERE `orders`.`id` = 980190968
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 1 LIMIT 1[0m
+  Rendered cart/_item.html.erb (0.4ms)
+  Rendered cart/_cart.html.erb (1.7ms)
+Completed 200 OK in 586ms (Views: 19.7ms | ActiveRecord: 3.9ms)
+  [1m[35m (1.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+-------------------------------------------------
+TshirtIntegrationTest: test_tshirt_administration
+-------------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:13', 'Prueba', '123456789', '2015-06-02 09:12:13')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.3ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`   ORDER BY `manufacturers`.`id` ASC LIMIT 1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------
+Admin::TshirtControllerTest: test_create
+----------------------------------------
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------
+Admin::TshirtControllerTest: test_failing_create
+------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `tshirts`[0m
+Processing by Admin::TshirtController#create as HTML
+  Parameters: {"tshirt"=>{"size"=>"L"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+-------------------------------------
+Admin::TshirtControllerTest: test_new
+-------------------------------------
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:12:13', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:12:13')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:12:13', 980190969, 155.25, 1, '2015-06-02 09:12:13')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Order 980190969 failed due to raised exception: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube.
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `orders` SET `error_message` = 'Exception raised: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube', `status` = 'failed', `updated_at` = '2015-06-02 09:12:13' WHERE `orders`.`id` = 980190969[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------
+AuthenticationTest: test_failed_login
+-------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY '9d246bd31f851b38945dc219b8af956a7f6c800895442822aeb395bc7bc2f8b8c8aa6da9991d5b72c5f07231f0108a3622aae9396644912f4135f7bc56e7ab59' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `email`, `last_request_at`, `login`, `login_count`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-06-02 09:12:13', 'f49cac419b93e4306b004898b169a4507aa292cce34f4b4dd95fddf81a56779354519c7954db30f39801c0bb01fdb28813e318921480aec186fb7822290c7016', '2015-06-02 09:12:13', '0.0.0.0', 'kevin@emporium.com', '2015-06-02 09:12:13', 'kevin', 1, 'Kevin Valle', 'ApwQJzYqhqTYK2FyGs9Q', 'GHNlJyUoa5yEvv7gm5uS', '9d246bd31f851b38945dc219b8af956a7f6c800895442822aeb395bc7bc2f8b8c8aa6da9991d5b72c5f07231f0108a3622aae9396644912f4135f7bc56e7ab59', '2015-06-02 09:12:13')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"troli", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'troli'  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered user_sessions/_form.html.erb (16.9ms)
+ApplicationController::current_user
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (1.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+AuthenticationTest: test_successful_login
+-----------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`email` = 'kevin@emporium.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`login` = 'kevin' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`persistence_token` = BINARY 'd149e667ffef39fa210f78aece4c1219d795e9fcc7ef3e8eeb1adcf0dfad6aa3930a749b2c2993249ecb818ce1f4827577095bb3e3050bb709ddbf15ebfaa177' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`name` = BINARY 'Kevin Valle' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`login` = BINARY 'kevin' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY 'kevin@emporium.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `email`, `login`, `name`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2015-06-02 09:12:13', '7987446384e86b1fb2566d659532879a7f3abe784cafe96158c9ed9fdda717b03c1c9f5fea2a8d76685683ec7f9e67fcc1fecfe3392301b48aa28cc2c4e23fb1', 'kevin@emporium.com', 'kevin', 'Kevin Valle', 'sCd7JNGYaFJxwOG5efA5', 'MSmXTAiMEOvMPAvM0ySX', 'd149e667ffef39fa210f78aece4c1219d795e9fcc7ef3e8eeb1adcf0dfad6aa3930a749b2c2993249ecb818ce1f4827577095bb3e3050bb709ddbf15ebfaa177', '2015-06-02 09:12:13')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/tshirt/new" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by Admin::TshirtController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://www.example.com/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started POST "/user_sessions/create" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"login"=>"kevin", "password"=>"[FILTERED]"}}
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`login` = 'kevin'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `current_login_at` = '2015-06-02 09:12:13', `current_login_ip` = '127.0.0.1', `last_request_at` = '2015-06-02 09:12:13', `login_count` = 1, `perishable_token` = 'NlynKiH0eeYRbCHMFMh', `updated_at` = '2015-06-02 09:12:13' WHERE `users`.`id` = 3[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/tshirt/new
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+  [1m[36m (5.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------
+CatalogTest: test_browse
+------------------------
+Started GET "/catalog/index" for 127.0.0.1 at 2015-06-02 11:12:13 +0200
+Processing by CatalogController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:14', '2015-06-02 09:12:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 0
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `tshirts`
+  Rendered catalog/_tshirts.html.erb (49.5ms)
+ApplicationController::current_user
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  [1m[35mCartItem Load (0.3ms)[0m  SELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965
+  Rendered cart/_cart.html.erb (1.3ms)
+Completed 200 OK in 61ms (Views: 56.2ms | ActiveRecord: 2.3ms)
+Started GET "/catalog/index?page=2" for 127.0.0.1 at 2015-06-02 11:12:14 +0200
+Processing by CatalogController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190965 LIMIT 1[0m
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5 OFFSET 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  Rendered catalog/_tshirts.html.erb (2.3ms)
+ApplicationController::current_user
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  [1m[36mCartItem Load (0.2ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965[0m
+  Rendered cart/_cart.html.erb (1.0ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.3ms)
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`club` = 'Madrid' LIMIT 1
+Started GET "/catalog/latest" for 127.0.0.1 at 2015-06-02 11:12:14 +0200
+Processing by CatalogController#latest as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190965 LIMIT 1[0m
+ApplicationController::require_no_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  Rendered catalog/_tshirts.html.erb (3.6ms)
+ApplicationController::current_user
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  [1m[36mCartItem Load (0.2ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190965[0m
+  Rendered cart/_cart.html.erb (1.1ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.2ms)
+  [1m[35mTshirt Load (0.3ms)[0m  SELECT  `tshirts`.* FROM `tshirts`   ORDER BY tshirts.id desc LIMIT 5
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` IN (1)[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:14', 'Fabricante', '123321123', '2015-06-02 09:12:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:14', 'Fabricante2', '123321113', '2015-06-02 09:12:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:14', 'Fabricante3', '1233211123', '2015-06-02 09:12:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:14', 'Fabricante4', '1233211123', '2015-06-02 09:12:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_create
+----------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_edit
+--------------------------------------------
+Processing by Admin::ManufacturerController#edit as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------
+Admin::ManufacturerControllerTest: test_failing_create
+------------------------------------------------------
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `manufacturers`
+Processing by Admin::ManufacturerController#create as HTML
+  Parameters: {"manufacturer"=>{"name"=>"Kevinva"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+Admin::ManufacturerControllerTest: test_index
+---------------------------------------------
+Processing by Admin::ManufacturerController#index as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------
+Admin::ManufacturerControllerTest: test_new
+-------------------------------------------
+Processing by Admin::ManufacturerController#new as HTML
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------
+Admin::ManufacturerControllerTest: test_show
+--------------------------------------------
+Processing by Admin::ManufacturerController#show as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------------
+Admin::ManufacturerControllerTest: test_test_destroy
+----------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `manufacturers`[0m
+Processing by Admin::ManufacturerController#destroy as HTML
+  Parameters: {"id"=>"1"}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+Admin::ManufacturerControllerTest: test_update
+----------------------------------------------
+Processing by Admin::ManufacturerController#update as HTML
+  Parameters: {"id"=>"1", "manufacturer"=>{"name"=>"OtroNombre", "telephone"=>"123456789"}}
+ApplicationController::require_user
+ApplicationController::current_user
+ApplicationController::current_user_session
+Redirected to http://test.host/user_sessions/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------------------
+AboutControllerTest: test_should_get_index
+------------------------------------------
+Processing by AboutController#index as HTML
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------
+CartControllerTest: test_add
+----------------------------
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`[0m
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:14', '2015-06-02 09:12:14')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190966 AND `cart_items`.`tshirt_id` = 4[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `price`, `tshirt_id`, `updated_at`) VALUES (1, 980190966, '2015-06-02 09:12:14', 2.5, 4, '2015-06-02 09:12:14')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190966 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190966
+  [1m[36m (1.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------
+CartControllerTest: test_clear
+------------------------------
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:14', '2015-06-02 09:12:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190967 AND `cart_items`.`tshirt_id` = 4
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `price`, `tshirt_id`, `updated_at`) VALUES (1, 980190967, '2015-06-02 09:12:14', 2.5, 4, '2015-06-02 09:12:14')
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+Redirected to http://test.host/
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190967 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190967[0m
+Processing by CartController#clear as HTML
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190967 LIMIT 1
+  [1m[36mCartItem Load (0.2ms)[0m  [1mSELECT `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190967[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `cart_items` WHERE `cart_items`.`id` = 980190965[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+  [1m[36mCart Load (0.3ms)[0m  [1mSELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190967 LIMIT 1[0m
+  [1m[35mTshirt Load (0.4ms)[0m  SELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190967
+  [1m[36m (4.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------
+CartControllerTest: test_remove
+-------------------------------
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2015-06-02 09:12:14', '2015-06-02 09:12:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190968 AND `cart_items`.`tshirt_id` = 4
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `cart_items` (`amount`, `cart_id`, `created_at`, `price`, `tshirt_id`, `updated_at`) VALUES (1, 980190968, '2015-06-02 09:12:14', 2.5, 4, '2015-06-02 09:12:14')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTshirt Load (0.2ms)[0m  SELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1
+Redirected to http://test.host/
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190968 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190968[0m
+Processing by CartController#remove as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCart Load (0.7ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190968 LIMIT 1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+  [1m[35mCartItem Load (0.4ms)[0m  SELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`cart_id` = 980190968 AND `cart_items`.`tshirt_id` = 4  ORDER BY `cart_items`.`id` ASC LIMIT 1
+  [1m[36mCartItem Load (0.3ms)[0m  [1mSELECT  `cart_items`.* FROM `cart_items`  WHERE `cart_items`.`id` = 980190966 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `cart_items` WHERE `cart_items`.`id` = 980190966[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTshirt Load (0.2ms)[0m  [1mSELECT  `tshirts`.* FROM `tshirts`  WHERE `tshirts`.`id` = 4 LIMIT 1[0m
+Redirected to http://test.host/
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+  [1m[35mCart Load (0.3ms)[0m  SELECT  `carts`.* FROM `carts`  WHERE `carts`.`id` = 980190968 LIMIT 1
+  [1m[36mTshirt Load (0.3ms)[0m  [1mSELECT `tshirts`.* FROM `tshirts` INNER JOIN `cart_items` ON `tshirts`.`id` = `cart_items`.`tshirt_id` WHERE `cart_items`.`cart_id` = 980190968[0m
+  [1m[35m (1.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:12:19', '2015-06-02 09:12:19', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:12:19', '2015-06-02 09:12:19', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:12:19', '2015-06-02 09:12:19')
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:12:19', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:12:19')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:12:19', 980190970, 155.25, 1, '2015-06-02 09:12:19')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Order 980190970 failed due to raised exception: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube.
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `orders` SET `error_message` = 'Exception raised: Undefined namespace prefix: gesmes:Envelope/xmlns:Cube/xmlns:Cube//xmlns:Cube', `status` = 'failed', `updated_at` = '2015-06-02 09:12:19' WHERE `orders`.`id` = 980190970[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.4ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:19', 'Fabricante', '123321123', '2015-06-02 09:12:19')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:19', 'Fabricante2', '123321113', '2015-06-02 09:12:19')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (9.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:19', 'Fabricante3', '1233211123', '2015-06-02 09:12:19')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (7.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:12:19', 'Fabricante4', '1233211123', '2015-06-02 09:12:19')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mFixture Delete (17.7ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:26:10', '2015-06-02 09:26:10', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:26:10', '2015-06-02 09:26:10', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:26:10', '2015-06-02 09:26:10')
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------
+ManufacturerTest: test_test_name
+--------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:26:10', 'Fabricante', '123321123', '2015-06-02 09:26:10')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (9.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------
+ManufacturerTest: test_test_telephone
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:26:10', 'Fabricante2', '123321113', '2015-06-02 09:26:10')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+ManufacturerTest: test_validates_presence_of_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:26:10', 'Fabricante3', '1233211123', '2015-06-02 09:26:10')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------
+ManufacturerTest: test_validates_presence_of_telephone
+------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `manufacturers` (`created_at`, `name`, `telephone`, `updated_at`) VALUES ('2015-06-02 09:26:10', 'Fabricante4', '1233211123', '2015-06-02 09:26:10')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------
+TshirtTest: test_belongs_to_mapping
+-----------------------------------
+  [1m[35mManufacturer Load (0.5ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------
+TshirtTest: test_validates_presence_of_club
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+TshirtTest: test_validates_presence_of_country
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.2ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------------
+TshirtTest: test_validates_presence_of_manufacturer
+---------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mManufacturer Load (0.2ms)[0m  SELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+TshirtTest: test_validates_presence_of_size
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mManufacturer Load (0.3ms)[0m  [1mSELECT  `manufacturers`.* FROM `manufacturers`  WHERE `manufacturers`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:26:10', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:26:10')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:26:10', 980190963, 155.25, 1, '2015-06-02 09:26:10')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `orders` SET `status` = 'processed', `updated_at` = '2015-06-02 09:26:15' WHERE `orders`.`id` = 980190963
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  `orders`.* FROM `orders`  WHERE `orders`.`id` = 980190963 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `order_items`  WHERE `order_items`.`order_id` = 980190963[0m
+  [1m[35mOrderItem Load (0.3ms)[0m  SELECT `order_items`.* FROM `order_items`  WHERE `order_items`.`order_id` = 980190963
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `orders` SET `status` = 'closed', `updated_at` = '2015-06-02 09:26:15' WHERE `orders`.`id` = 980190963
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:26:37', '2015-06-02 09:26:37', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-02 09:26:37', '2015-06-02 09:26:37', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-02 09:26:37', '2015-06-02 09:26:37')
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+----------------------------------
+OrderTest: test_create_valid_order
+----------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `orders` (`created_at`, `customer_ip`, `email`, `phone_number`, `ship_to_address`, `ship_to_city`, `ship_to_country_code`, `ship_to_first_name`, `ship_to_last_name`, `ship_to_postal_code`, `status`, `updated_at`) VALUES ('2015-06-02 09:26:37', '127.0.0.1', 'kevin@email.com', '123456789', 'Calle de Miguel', 'Paterna', 'ES', 'Troli', 'Perez', '123456', 'open', '2015-06-02 09:26:37')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `order_items` (`amount`, `created_at`, `order_id`, `price`, `tshirt_id`, `updated_at`) VALUES (3, '2015-06-02 09:26:37', 980190964, 155.25, 1, '2015-06-02 09:26:37')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `orders` SET `status` = 'processed', `updated_at` = '2015-06-02 09:26:39' WHERE `orders`.`id` = 980190964[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  `orders`.* FROM `orders`  WHERE `orders`.`id` = 980190964 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `order_items`  WHERE `order_items`.`order_id` = 980190964
+  [1m[36mOrderItem Load (0.3ms)[0m  [1mSELECT `order_items`.* FROM `order_items`  WHERE `order_items`.`order_id` = 980190964[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `orders` SET `status` = 'closed', `updated_at` = '2015-06-02 09:26:39' WHERE `orders`.`id` = 980190964[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (11.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------
+OrderTest: test_validations
+---------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mFixture Delete (24.3ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:12:28', '2015-06-04 17:12:28', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:12:28', '2015-06-04 17:12:28', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-04 17:12:28', '2015-06-04 17:12:28')
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------------------
+AboutControllerTest: test_should_get_index
+------------------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (5.2ms)
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 1007ms (Views: 1000.4ms | ActiveRecord: 5.6ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:14:41', '2015-06-04 17:14:41', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:14:41', '2015-06-04 17:14:41', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-04 17:14:41', '2015-06-04 17:14:41')
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------
+AboutControllerTest: test_index
+-------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (1.0ms)
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 63ms (Views: 61.2ms | ActiveRecord: 1.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:14:58', '2015-06-04 17:14:58', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:14:58', '2015-06-04 17:14:58', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-04 17:14:58', '2015-06-04 17:14:58')
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------
+AboutControllerTest: test_index
+-------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (1.0ms)
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:15:10', '2015-06-04 17:15:10', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:15:10', '2015-06-04 17:15:10', 298486374)[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (1.1ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (1.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.9ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-04 17:15:10', '2015-06-04 17:15:10')
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+-------------------------------
+AboutControllerTest: test_index
+-------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (2.5ms)
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 88ms (Views: 85.3ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `cart_items`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:15:42', '2015-06-04 17:15:42', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `cart_items` (`created_at`, `updated_at`, `id`) VALUES ('2015-06-04 17:15:42', '2015-06-04 17:15:42', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `tshirts`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (1, 'L', 'Madrid', 'Spain', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (2, 'S', 'Barcelona', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (3, 'XXL', 'Paterna', 'Mexico', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (4, 'L', 'Cadiz', 'Spain', 2.5, 1)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (5, 'S', 'Mentira', 'Imaginacion', 2.5, 1)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `tshirts` (`id`, `size`, `club`, `country`, `price`, `manufacturer_id`) VALUES (6, 'SL', 'Mentiras', 'Imaginacion', 2.5, 1)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `manufacturers`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `manufacturers` (`id`, `name`, `telephone`, `created_at`, `updated_at`) VALUES (1, 'Kevinva', '123456789', '2015-06-04 17:15:42', '2015-06-04 17:15:42')
+  [1m[36m (20.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------
+AboutControllerTest: test_index
+-------------------------------
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (1.0ms)
+ApplicationController::current_user
+ApplicationController::current_user_session
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `users`
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 1.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
