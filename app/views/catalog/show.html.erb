@@ -1,4 +1,8 @@
-
+<% if @tshirt.image.exists? then %>
+  <dd><%= image_tag @tshirt.image.url(:medium) %></dd>
+<% else %>
+  <p>No cover image available.</p>
+<% end %>
 <dl>
   <dt>Price</dt>
   <dd><%= sprintf("%0.2f", @tshirt.price) %></dd>

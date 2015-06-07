@@ -32,3 +32,12 @@
   <%= text_field 'tshirt', 'price' %></p>
 </div>
 
+<div class="field">
+  <% if @tshirt.image.exists? then %>
+    <dd><%= image_tag @tshirt.image.url(:medium) %></dd>
+  <% else %>
+    <p> There is no image attached. Please upload one. </p>
+  <% end %>
+  <p><label for="tshirt_image">Image</label><br/>
+  <%= file_field 'tshirt', :image %></p>
+</div>

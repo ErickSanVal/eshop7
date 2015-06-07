@@ -54,7 +54,7 @@ class Admin::TshirtController < AuthenticatedController
 
   private
     def tshirt_params
-      params.require(:tshirt).permit(:manufacturer_id, :price, :size, :country, :club)#, :image)
+      params.require(:tshirt).permit(:manufacturer_id, :price, :size, :country, :club, :image)
     end
 
     def load_data
